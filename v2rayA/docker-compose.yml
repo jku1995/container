@@ -1,0 +1,16 @@
+version: "3"
+services:
+  v2raya:
+    image: mzz2017/v2raya
+    container_name: v2raya
+    privileged: true
+    network_mode: host # --network host
+    ports:
+      - 2017:2017
+    restart: always
+    volumes:
+      - ./data/v2raya:/etc/v2raya
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - /lib/modules:/lib/modules:ro
+        #- /etc/resolv.conf.static:/etc/resolv.conf
